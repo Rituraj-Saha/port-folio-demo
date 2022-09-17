@@ -1,0 +1,240 @@
+:root{
+    padding-bottom: 10px;
+}
+.intro{
+    display: flex;
+    width: 100%;   
+    flex: 1;  
+}
+.intro-left{
+    display: flex;
+    flex: .6;
+   
+}
+.intro-right{
+    display: flex;
+    flex: .3;
+    /* border: 1px solid black; */
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-top: 25px;
+
+}
+
+.mid_container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 50px;
+}
+.button{
+    border-radius: 34px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 11px 26px 11px 26px;
+    background: linear-gradient(180deg, #fdc50f 26.71%, #fb982f 99.6%);
+    box-shadow: 0px 20px 24px 3px rgba(251, 161, 40, 0.42);
+  }
+  .s-button{
+    width: 10rem;
+    height: 3rem;
+    margin-top: 1rem;
+}
+.button:hover{
+    background: white;
+    cursor: pointer;
+    color: var(--orange);
+    border: 1px solid var(--orange);
+  }
+
+.text_anim_container{
+    display: flex;
+    align-items:center;
+    --font-size : 60px;
+    --line-height : 90px;
+     /* to change animation duration, change this. */
+    --line-anim-dur:2s;
+    /* this is changed dynamically by javascript depending on the number of "dynamic text number" */
+    --total-dynamic-text: 1;
+    --total-anim-dur: 5s;
+    flex-direction: column;
+    align-items: flex-start;    
+}
+
+.text_anim_container .static_text{
+    font-family: Cambria;
+    font-size: var(--font-size);
+    color: #fff;
+    
+}
+
+.text_anim_container .dynamic_text{
+    font-size: var(--font-size);
+    height: var(--line-height);
+    line-height: var(--line-height);
+    overflow: hidden;
+    padding-left: 25px;
+    color: #fff;
+}
+
+.dynamic_text li{
+    list-style: none;
+    position: relative;
+    top: 0;
+    animation: slide var(--total-anim-dur) steps(var(--total-dynamic-text)) infinite;    
+}
+
+.dynamic_text li span{
+    position: relative;    
+    display: inline-block;        
+}
+
+.dynamic_text li span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image:  linear-gradient(to right, #1e1e1e, #170a01);;
+    border-left: 2px solid black;
+    animation: typing var(--line-anim-dur) steps(10) infinite ;
+}
+
+.m-img{
+    height: 80%;
+    width: 60%;
+}
+.contact-div{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.mail-div{
+    display: flex;
+    flex: 1;
+    color: #fff;
+    align-items: center;
+}
+.phn-div{
+    display: flex;
+    flex: 1;
+    color: #fff;
+    align-items: center;
+}
+
+/* :root {
+    --page-margin: min(2rem, 5vw);
+    color: #444;
+  } */
+  
+  .main{
+    display: flex;
+    width: 100%;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right, #1e1e1e, #170a01);
+  }
+  .left{
+    /* position: relative;
+    float: left; 
+    left: 10px;
+    top: 80px; */
+    display: flex;
+    flex: .1;
+   }
+   .left > button{
+    border-radius: 50%;
+   }
+   
+   .internal{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    }
+   
+   .center{
+    float: left; 
+    width: 90%;
+    height: 100%;
+    margin: 1px;
+    overflow: hidden;
+    /*will change this to hidden later to deny scolling to user*/
+    white-space: nowrap;
+    /* display: flex;
+    flex: .9;
+    overflow: hidden;
+    white-space: nowrap; */
+   }
+   
+   .right{
+    /* position: relative;
+    align-items: flex-end;
+    bottom: 220px;
+    width: 5px;
+    height: 5px;
+    left: 1000px; */
+    display: flex;
+    flex: .1;
+   }
+   .right > button{
+    border-radius: 50%;
+   }
+
+   .carrier-breaks{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* d4fc79 96e6a1 */
+    background-image: linear-gradient(120deg, #1e1e1e 0%, #170a01 100%);
+    padding: 10px;
+    justify-content: center;
+   }
+   .e-stage{
+    display: flex;
+    flex: .3;
+    
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+   }
+   .point{
+    border-radius: 50%;
+    background-color: #fff;
+   }
+   .info{
+    font-weight: bold;
+    font-family: Cambria;
+    color: white;
+    text-align: center;
+    width: 100%;
+   }
+   h3{
+    color: #fff;
+   }
+   .education-background{
+    display: flex;
+    justify-content: center;
+   }
+   .academic-div{
+    background-color: #fff;
+   
+   }
+
+@keyframes slide{
+    100%{
+        top: calc(var(--line-height)* var(--total-dynamic-text)*-1 );
+    }
+}
+@keyframes typing{
+    40%, 60%{
+        left: calc(100% + 30px);
+    }
+    100%{
+        left: 0;
+    }
+}
